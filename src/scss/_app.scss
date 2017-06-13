@@ -1,0 +1,8 @@
+@mixin todo-ng-host($display: block) {
+	:host {
+		display: $display;
+		@content;
+	}
+}
+
+$grey:  #CECECE;

@@ -6,7 +6,7 @@ export class TodoDataService {
 
   // Placeholder for last id so we can simulate
   // automatic incrementing of id's
-  lastId: number = 0;
+  lastId = 0;
 
   // Placeholder for todo's
   todos: Todo[] = [];
@@ -32,7 +32,7 @@ export class TodoDataService {
 
   // Simulate PUT /todos/:id
   updateTodoById(id: number, values: Object = {}): Todo {
-    let todo = this.getTodoById(id);
+    const todo = this.getTodoById(id);
     if (!todo) {
       return null;
     }
@@ -53,8 +53,8 @@ export class TodoDataService {
   }
 
   // Toggle todo complete
-  toggleTodoComplete(todo: Todo){
-    let updatedTodo = this.updateTodoById(todo.id, {
+  toggleTodoComplete(todo: Todo) {
+    const updatedTodo = this.updateTodoById(todo.id, {
       complete: !todo.complete
     });
     return updatedTodo;

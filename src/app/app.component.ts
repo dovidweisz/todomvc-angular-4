@@ -3,10 +3,9 @@ import {Todo} from './todo';
 import {TodoDataService} from './todo-data.service';
 
 @Component({
-  selector: 'app-root',
+  selector: 'todo-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [TodoDataService]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
 
@@ -18,14 +17,6 @@ export class AppComponent {
   addTodo() {
     this.todoDataService.addTodo(this.newTodo);
     this.newTodo = new Todo();
-  }
-
-  toggleTodoComplete(todo) {
-    this.todoDataService.toggleTodoComplete(todo);
-  }
-
-  removeTodo(todo) {
-    this.todoDataService.deleteTodoById(todo.id);
   }
 
   get todos() {
